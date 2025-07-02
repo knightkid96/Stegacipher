@@ -1,0 +1,60 @@
+Factors Affecting the Message Length:
+1. Image Format:
+Lossless Formats (e.g., PNG, BMP):
+These formats retain all pixel data, making them ideal for steganography. The maximum message size is directly proportional to the image size and its bit depth.
+Lossy Formats (e.g., JPEG):
+Due to compression, some data may be lost or altered, reducing the capacity to embed a message reliably.
+2. Image Dimensions:
+Larger images have more pixels, which means more capacity for embedding data.
+Example: A 100x100 image has 10,000 pixels. If you use 1 byte per pixel, the maximum message size is approximately 10 KB.
+3. Color Depth:
+Images with higher bit depth (e.g., 24-bit RGB images) can hold more data:
+24-bit images: 3 bytes per pixel (1 byte for each Red, Green, and Blue channel). This allows for more data to be stored compared to an 8-bit grayscale image.
+4. Steganographic Method:
+Techniques like Least Significant Bit (LSB) allow embedding a few bits per pixel (e.g., the least significant bit of each color channel in an RGB image).
+The number of bits altered per pixel determines the message size and the visual quality of the stego image.
+5. Compression:
+Embedding data in compressed images (like JPEG) may result in a lower capacity due to compression artifacts and losses.
+Typical Limitations:
+Capacity Formula (Approximation):
+
+For LSB steganography:
+Max Capacity (bytes)
+=
+Total Pixels
+×
+Bits Used Per Pixel
+8
+Max Capacity (bytes)= 
+8
+Total Pixels×Bits Used Per Pixel
+​
+ 
+Example: A 1920x1080 (Full HD) 24-bit image using 1 LSB per color channel:
+Max Capacity
+=
+1920
+×
+1080
+×
+3
+8
+=
+777
+,
+600
+ 
+bytes (approx. 777 KB)
+Max Capacity= 
+8
+1920×1080×3
+​
+ =777,600bytes (approx. 777 KB)
+Quality vs. Capacity:
+
+Increasing the amount of embedded data can distort the image, making it visually suspicious.
+Practical Limits:
+
+Real-world tools often limit the message size to a fraction of the maximum capacity (e.g., 50-80%) to maintain visual integrity.
+In Conclusion:
+The message length is not fixed but rather limited by the image size, format, and technique used. A good rule of thumb is that larger, high-quality, uncompressed images can embed longer messages, while smaller or compressed images (e.g., JPEG) have reduced capacity.

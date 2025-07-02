@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StegaCipher - Secure Message Embedding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section with Ribbon -->
+    <header>
+        <div class="ribbon">StegaCipher</div>
+    </header>
+
+    <!-- About Project Section -->
+    <section class="section">
+        <h2>About the Project</h2>
+        <p>
+            StegaCipher allows users to embed secret messages within image files and securely extract them using a key. 
+            This application supports popular image formats like JPEG, PNG, and BMP. 
+            Simply choose a file, provide a message and key, and secure your data.
+        </p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Buttons to Show Sections -->
+        <div class="button-container">
+            <button id="createButton" class="button">Create a StegImage</button>
+            <button id="readButton" class="button">Read a StegImage</button>
+        </div>
+
+        <!-- Embed Message Section -->
+        <section id="createSection" class="section hidden">
+            <h2>Create A StegaImage</h2>
+            <form action="embed.php" method="POST" enctype="multipart/form-data" class="form">
+                <label for="file">Choose Image File</label>
+                <input type="file" name="file" required>
+                <small>Supports Images Only (E.g JPEG, PNG, BMP)</small>
+
+                <label for="message">Message</label>
+                <textarea name="message" required placeholder="Enter your secret message here..."></textarea>
+
+                <div class="key-input">
+                    <label for="key">Key</label>
+                    <div class="key-field-wrapper">
+                        <input type="password" name="key" id="createKeyField" required placeholder="Enter a secret key">
+                        <span class="eye-icon" onclick="toggleKeyVisibility('createKeyField')">👁️</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="button">Embed Message</button>
+            </form>
+        </section>
+
+        <!-- Extract Message Section -->
+        <section id="readSection" class="section hidden">
+            <h2>Read A StegaImage</h2>
+            <form action="extract.php" method="POST" enctype="multipart/form-data" class="form">
+                <label for="file">Choose Image File</label>
+                <input type="file" name="file" required>
+
+                <div class="key-input">
+                    <label for="key">Key</label>
+                    <div class="key-field-wrapper">
+                        <input type="password" name="key" id="readKeyField" required placeholder="Enter the secret key">
+                        <span class="eye-icon" onclick="toggleKeyVisibility('readKeyField')">👁️</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="button">Extract Message</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <small>by Tejas S</small>
+    </footer>
+
+    <script>
+        // Toggle visibility of sections
+        document.getElementById('createButton').addEventListener('click', () => {
+            document.getElementById('createSection').classList.toggle('hidden');
+            document.getElementById('readSection').classList.add('hidden');
+        });
+
+        document.getElementById('readButton').addEventListener('click', () => {
+            document.getElementById('readSection').classList.toggle('hidden');
+            document.getElementById('createSection').classList.add('hidden');
+        });
+
+        // Toggle key visibility
+        function toggleKeyVisibility(fieldId) {
+            const keyField = document.getElementById(fieldId);
+            if (keyField.type === 'password') {
+                keyField.type = 'text';
+            } else {
+                keyField.type = 'password';
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide sections by default */
+        .hidden {
+            display: none;
+        }
+
+        /* Eye icon styling */
+        .eye-icon {
+            cursor: pointer;
+            margin-left: 5px;
+            font-size: 1.2em;
+        }
+
+        /* Flex styling for key input wrapper */
+        .key-field-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Center buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</body>
+</html>

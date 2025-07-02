@@ -1,0 +1,10 @@
+Command: "C:\Program Files (x86)\PDFtk\bin\PdftkXp.exe" "uploads/test.pdf" update_info_utf8 "uploads/temp_info.txt" output "uploads/test.pdf"
+Command: "C:\Program Files (x86)\PDFtk\bin\PdftkXp.exe" "uploads/test.pdf" update_info_utf8 "uploads/temp_info.txt" output "uploads/test.pdf"
+Command: "C:\Program Files (x86)\PDFtk\bin\PdftkXp.exe" "C:\xampp\tmp\phpE1F5.tmp" dump_data
+Command: "C:\Program Files (x86)\PDFtk\bin\PdftkXp.exe" "C:\xampp\tmp\phpEFD4.tmp" dump_data
+Command: "C:\xampp\htdocs\StegaCipher\exiftool-13.11_64\exiftool.exe" -overwrite_original -Comment="CRVmZmadRI3pqGFSaEm3biTXIe8jzdqxgceitfo+BEw=" "uploads/Newspaper Add Final Dimensions trial.jpg.png"
+Output:     0 image files updated
+    1 files weren't updated due to errors
+Status: 1
+Output: 
+Status: 0

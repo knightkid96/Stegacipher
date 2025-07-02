@@ -1,0 +1,146 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    padding: 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+    background-size: cover;
+}
+
+/* Header section */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ribbon {
+    background-color: #2d2d2d;
+    color: #00ff00;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Container for main content */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Form sections */
+.section {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h2 {
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+input[type="file"] {
+    border: 2px solid #00ff00;
+    padding: 10px;
+    color: #00ff00;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="text"], textarea, input[type="password"] {
+    padding: 12px;
+    width: 80%;
+    border-radius: 5px;
+    border: 2px solid #00ff00;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+button {
+    background-color: #00ff00;
+    color: #2d2d2d;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #33cc33;
+}
+
+/* Small font for file info */
+small {
+    color: #808080;
+    font-size: 0.8em;
+}
+
+/* Key input toggle button */
+.toggle-key {
+    background: transparent;
+    color: #00ff00;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: underline;
+}
+
+.key-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #808080;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 768px) {
+    .container {
+        gap: 30px;
+    }
+    
+    .form {
+        width: 90%;
+    }
+    
+    input[type="text"], input[type="password"], textarea {
+        width: 100%;
+    }
+}
